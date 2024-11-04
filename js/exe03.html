@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    <h1>GAYH1<h1>
+    <h1>Processador de Números</h1>
+    <p>Insira 10 números inteiros:</p>
+    <div id="inputs">
+        <input type="number" placeholder="Número 1">
+        <input type="number" placeholder="Número 2">
+        <input type="number" placeholder="Número 3">
+        <input type="number" placeholder="Número 4">
+        <input type="number" placeholder="Número 5">
+        <input type="number" placeholder="Número 6">
+        <input type="number" placeholder="Número 7">
+        <input type="number" placeholder="Número 8">
+        <input type="number" placeholder="Número 9">
+        <input type="number" placeholder="Número 10">
+    </div>
+    <button onclick="processNumbers()">Processar Números</button>
+    <div id="result"></div>
+
+    <script>
+        function processNumbers() {
+            const inputs = document.querySelectorAll('#inputs input');
+            const numbers = Array.from(inputs).map(input => parseInt(input.value));
+
+           
+            if (numbers.length !== 10) {
+                document.getElementById('result').innerText = "Por favor, forneça exatamente 10 números inteiros.";
+                return;
+            }
+
+            
+            const total = numbers.reduce((acc, num) => acc + num, 0);
+            const average = total / numbers.length;
+
+           
+            const greaterThanAverage = numbers.filter(num => num > average);
+            
+           
+            const countLessThanZero = numbers.filter(num => num < 0).length;
+
+           
+            let resultText = `Números maiores que a média (${average.toFixed(2)}): ${greaterThanAverage.join(', ')}`;
+            resultText += `\nNúmero de elementos menores que zero: ${countLessThanZero}`;
+            document.getElementById('result').innerText = resultText.replace(/\n/g, '\n');
+        }
+    </script>
+</body>
+</html>
+ 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<form action="" method="post">
+    <h2>Qual o valor do combustivel p/ litro</h2>
+    <input type="number" id="valor">
+    <h2>Quantos km você percorreu?</h2>
+    <input type="number" id="km"> <br> <br> <br>
+    <input type="button" value="somar" onclick="calcular()">
+</form>
+<h1 id="Orçamento2"> O seu custo ficará em R$  </h1>
+<h1 id="Orçamento">  </h1>
+ 
+<script>
+    function calcular(){
+        var valor = parseFloat(document.getElementById('valor').value)
+        var km = parseFloat(document.getElementById('km').value)
+       
+        var preçototal = (km / 8) * valor
+        document.getElementById('Orçamento').innerHTML = preçototal.toFixed(2)
+    }
+</script>
+ 
+</body>
+</html>
+ 

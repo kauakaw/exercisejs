@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<form action="" method="post">
+    <h2>Insira 5 números</h2>
+    <input type="number" id="num1"><br>
+    <input type="number" id="num2"><br>
+    <input type="number" id="num3"><br>
+    <input type="number" id="num4"><br>
+    <input type="number" id="num5"> <br><br><br>
+    <input type="button" value="calcular" onclick="calcular()">
+</form>
+<h1 id="Orçamento2"> A soma dos números é </h1>
+<h1 id="soma">  </h1>
+<br><br><br>
+<h1 id="Orçamento2"> A média dos números é </h1>
+<h1 id="media">  </h1>
+<br><br><br>
+<h1 id="Orçamento2"> A quantidade de números pares são </h1>
+<h1 id="par">  </h1>
+<br><br><br>
+<h1 id="Orçamento2"> A quantidade de números impares são </h1>
+<h1 id="impar">  </h1>
+<br><br><br>
+
+<script>
+    function calcular(){
+        
+        var num1 = parseFloat(document.getElementById('num1').value)
+        var num2 = parseFloat(document.getElementById('num2').value)
+        var num3 = parseFloat(document.getElementById('num3').value)
+        var num4 = parseFloat(document.getElementById('num4').value)
+        var num5 = parseFloat(document.getElementById('num5').value)
+
+        var soma = num1 + num2 + num3 + num4 + num5
+        document.getElementById('soma').innerHTML = soma
+        var media = soma/5
+        document.getElementById('media').innerHTML = media
+
+        var par = 0
+        var impar = 0
+        if(num1 % 2 == 0){
+            par++;
+        }else{
+            impar++;
+        }
+        if(num2 % 2 == 0){
+            par++;
+        }else{
+            impar++;
+        }
+        if(num3 % 2 == 0){
+            par++;
+        }else{
+            impar++;
+        }
+        if(num4 % 2 == 0){
+            par++;
+        }else{
+            impar++;
+        }
+        if(num5 % 2 == 0){
+            par++;
+        }else{
+            impar++;
+        }
+        document.getElementById('par').innerHTML = par
+        document.getElementById('impar').innerHTML = impar
+    }
+</script>
+ 
+</body>
+</html>
+ 

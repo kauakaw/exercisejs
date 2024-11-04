@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<form action="" method="post">
+    <h2>Calculo de força resultante</h2>
+    <h2>Massa do objeto em Kg</h2>
+    <input type="number" id="valorm">
+    <h2>Aceleração da maior força aplicada em m/s²</h2>
+    <input type="number" id="f1">
+    <h2>Aceleração da 2º força aplicada em m/s²</h2>
+    <input type="number" id="f2"> <br> <br> <br>
+    <input type="button" value="calcular" onclick="calcular()">
+</form>
+<h2 id="Orçamento2"> A força resultante é </h2>
+<h2 id="fresultante">  </h2>
+<br><br><br>
+
+<form action="" method="post">
+    <h2>Calculo Força de ação e reação</h2>
+    <h2>Massa do 1º objeto em Kg</h2>
+    <input type="number" id="massa1">
+    <h2>Massa do 2º objeto em Kg</h2>
+    <input type="number" id="massa2">
+    <h2>Aceleração aplicada no 1º objeto em m/s²</h2>
+    <input type="number" id="f1">
+    <h2>Aceleração aplicada no 2º objeto em m/s²</h2>
+    <input type="number" id="f2"> <br> <br> <br>
+    <input type="button" value="calcular2" onclick="calcular2()">
+</form>
+<h2 id="Orçamento2"> A força resultante é </h2>
+<h2 id="fresultante">  </h2>
+ 
+<script>
+    function calcular(){
+        var valorm = parseFloat(document.getElementById('valorm').value)
+        var f1 = parseFloat(document.getElementById('f1').value)
+        var f2 = parseFloat(document.getElementById('f2').value)
+        var fresultante = valorm * (f1 - f2)
+
+        document.getElementById('fresultante').innerHTML = fresultante + "N"
+    }
+    function calcular2(){
+        var massa1 = parseFloat(document.getElementById('valorm').value)
+        var massa2 = parseFloat(document.getElementById('valorm').value)
+        var f1 = parseFloat(document.getElementById('f1').value)
+        var f2 = parseFloat(document.getElementById('f2').value)
+        
+        var fresultante1 = massa1 * f1
+        var fresultante2 = massa2 * f2
+        document.getElementById('fresultante').innerHTML = fresultante1
+    }
+</script>
+ 
+</body>
+</html>
+ 

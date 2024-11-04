@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<form action="" method="post">
+    <h2>Percentual de metal</h2>
+    <input type="number" id="valorm">
+    <h2>Percentual de ametal</h2>
+    <input type="number" id="valora"> <br> <br> <br>
+    <input type="button" value="somar" onclick="calcular()">
+</form>
+<h1 id="Orçamento2"> A liga é predominantemente </h1>
+<h1 id="liga">  </h1>
+ 
+<script>
+    function calcular(){
+        var valor = parseFloat(document.getElementById('valorm').value)
+        var km = parseFloat(document.getElementById('valora').value)
+       
+        if (valorm + valora == 100){
+            if (valorm > valora){
+                document.getElementById('liga').innerHTML = "Metálica"
+            }
+            else if (valora > valorm){
+                document.getElementById('liga').innerHTML = "Ametálica"
+            }
+        }
+        else{
+            document.getElementById('liga').innerHTML = "Os valores não são válidos. Tente novamente!"
+        }
+    }
+</script>
+ 
+</body>
+</html>
+ 
